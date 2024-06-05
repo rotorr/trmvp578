@@ -1,6 +1,6 @@
 name: Create a new resource group in Azure
 env:
-  AZURE_RG_NAME: rgtgithubresourcegroup  # set this to the name of your Azure Web App
+  AZURE_RG_NAME: rgtgithubresourcegroup-2  # set this to the name of your Azure Web App
   AZURE_LOCATION: eastus
 on:
   workflow_dispatch:
