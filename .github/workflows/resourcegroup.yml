@@ -1,4 +1,4 @@
-name: Create a resource group in Azure
+name: Delete a resource group in Azure
 env:
   AZURE_RG_NAME: rgtgithubresourcegroup  # set this to the name of your Azure Web App
   AZURE_LOCATION: eastus
@@ -21,4 +21,4 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az group create --name '${{ env.AZURE_RG_NAME }}' --location '${{ env.AZURE_LOCATION }}' 
+            az group delete --name '${{ env.AZURE_RG_NAME }}' --location '${{ env.AZURE_LOCATION }}' 
