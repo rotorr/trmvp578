@@ -1,7 +1,7 @@
 name: Delete a resource group in Azure
 env:
   AZURE_RG_NAME: rgtgithubresourcegroup-2  # set this to the name of your Azure Web App
-  AZURE_LOCATION: eastus
+#  AZURE_LOCATION: eastus
 on:
   workflow_dispatch:
 permissions:
@@ -21,4 +21,4 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az group delete --name '${{ env.AZURE_RG_NAME }}' --location '${{ env.AZURE_LOCATION }}' 
+            az group delete --name '${{ env.AZURE_RG_NAME }}'  
