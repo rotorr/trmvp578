@@ -21,4 +21,4 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az group delete --name '${{ env.AZURE_RG_NAME }}'  
+            az group delete --name '${{ env.AZURE_RG_NAME }}' --yes
