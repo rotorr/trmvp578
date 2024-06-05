@@ -1,0 +1,24 @@
+name: Create a resource group in Azure
+env:
+  AZURE_RG_NAME: rgtgithubresourcegroup  # set this to the name of your Azure Web App
+  AZURE_LOCATION: eastus
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  Login-To-Azure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az group create --name '${{ env.AZURE_RG_NAME }}' --location '${{ env.AZURE_LOCATION }}' 
